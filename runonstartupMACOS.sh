@@ -13,7 +13,7 @@ echo '
     <string>com.4lpndev.strt.plist</string>
     <key>ProgramArguments</key>
     <array>
-      <string>/Users/${USR}/Desktop/.runonstartupMACOS.sh</string>
+      <string>/Users/$USR/Desktop/.runonstartupMACOS.sh</string>
     </array>
     <key>RunAtLoad</key>
     <true/>
