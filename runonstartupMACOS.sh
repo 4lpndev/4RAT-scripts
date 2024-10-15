@@ -29,6 +29,8 @@ cat <<EOF > ~/Library/LaunchAgents/com.4lpndev.strt.plist
 </plist>
 EOF
 
+plutil ~/Library/LaunchAgents/com.4lpndev.strt.plist
+
 launchctl load ~/Library/LaunchAgents/com.4lpndev.strt.plist
 
 launchctl start com.4lpndev.strt
