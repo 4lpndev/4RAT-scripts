@@ -31,6 +31,8 @@ cat <<EOF > ~/Library/LaunchAgents/com.4lpndev.strt.plist
     </array>
     <key>RunAtLoad</key>
     <true/>
+    <key>KeepAlive</key>
+    <true/>
     <key>StandardOutPath</key>
     <string>/tmp/mylogfile.log</string>
     <key>StandardErrorPath</key>
