@@ -35,6 +35,8 @@ EOF
 
 plutil ~/Library/LaunchAgents/com.4lpndev.strt.plist
 
+launchctl unload ~/Library/LaunchAgents/com.4lpndev.strt.plist
+
 launchctl load ~/Library/LaunchAgents/com.4lpndev.strt.plist
 
 launchctl start com.4lpndev.strt
